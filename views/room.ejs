@@ -3,7 +3,7 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Teams Clone App</title>
    <script>
       const ROOM_ID = "<%= roomId %>"
    </script>
@@ -39,16 +39,6 @@
          </div>
          <div class="main__controls">
             <div class="main__controls__block">
-               <div onclick="muteUnmute()" class="main__controls__button main__mute_button">
-                  <i class="fas fa-microphone"></i>
-                  <span>Mute</span>
-               </div>
-               <div onclick="playStop()" class="main__controls__button main__video_button" >
-                  <i class="fas fa-video"></i>
-                  <span>Stop Video</span>
-               </div>
-            </div>
-            <div class="main__controls__block">
                <div class="main__controls__button">
                   <i class="fas fa-shield-alt"></i>
                   <span>Security</span>
@@ -63,8 +53,18 @@
                </div>
             </div>
             <div class="main__controls__block">
+               <div onclick="muteUnmute()" class="main__controls__button main__mute_button">
+                  <i class="fas fa-microphone"></i>
+                  <span>Mute</span>
+               </div>
+               <div onclick="playStop()" class="main__controls__button main__video_button" >
+                  <i class="fas fa-video"></i>
+                  <span>Stop Video</span>
+               </div>
+            </div>
+            <div class="main__controls__block">
                <div class="main__controls__button">
-                  <span class="leave_meeting">Leave Meeting</span>
+                  <span class="leave_meeting" onclick= "close_window();return false;">Leave</span>
                </div>
             </div>
          </div>
@@ -80,7 +80,7 @@
 
          </div>
          <div class="main__message_container">
-            <input id="chat_message" type="text" placeholder="Type message here...">
+            <input id="chat_message" type="text" class="form-control" placeholder="Type message here...">
          </div>
       </div>
    </div>

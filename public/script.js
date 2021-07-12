@@ -1,10 +1,6 @@
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
-const myPeer = new Peer(undefined, {
-  path: '/peerjs',
-  host: '/',
-  port: '443'
-})
+const myPeer = new Peer()
 let myVideoStream;
 const myVideo = document.createElement('video')
 myVideo.muted = true;
@@ -131,4 +127,12 @@ const setPlayVideo = () => {
     <span>Play Video</span>
   `
   document.querySelector('.main__video_button').innerHTML = html;
+}
+
+ // for leave meeting
+
+ function close_window() {
+  if (confirm("Are You Sure to leave this meeting ?")) {
+    window.close();
+  }
 }
