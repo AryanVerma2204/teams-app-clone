@@ -5,10 +5,11 @@ let myVideoStream;
 const myVideo = document.createElement('video')
 myVideo.muted = true;
 const peers = {}
+//Here we get the video and audio streams from the user
 navigator.mediaDevices.getUserMedia({
   video: true,
   audio: true
-}).then(stream => {
+}).then(stream => {//This is a promise which executes after getting user permission to get the respective streams
   myVideoStream = stream;
   addVideoStream(myVideo, stream)
   myPeer.on('call', call => {
@@ -31,6 +32,7 @@ navigator.mediaDevices.getUserMedia({
       text.val('')
     }
   });
+  //This part displays the message in the chat section
   socket.on("createMessage", message => {
     $("ul").append(`<li class="message"><b>user</b><br/>${message}</li>`);
     scrollToBottom()
@@ -44,7 +46,7 @@ socket.on('user-disconnected', userId => {
 myPeer.on('open', id => {
   socket.emit('join-room', ROOM_ID, id)
 })
-
+//This gets executed when a new user is added
 function connectToNewUser(userId, stream) {
   const call = myPeer.call(userId, stream)
   const video = document.createElement('video')
@@ -67,13 +69,13 @@ function addVideoStream(video, stream) {
 }
 
 
-
+//This is to scroll through the chat window, as the messages might be large in quantity
 const scrollToBottom = () => {
   var d = $('.main__chat_window');
   d.scrollTop(d.prop("scrollHeight"));
 }
 
-
+//to enable muting functionality in the app
 const muteUnmute = () => {
   const enabled = myVideoStream.getAudioTracks()[0].enabled;
   if (enabled) {
@@ -84,7 +86,7 @@ const muteUnmute = () => {
     myVideoStream.getAudioTracks()[0].enabled = true;
   }
 }
-
+//to enable video to stopped or vice versa
 const playStop = () => {
   console.log('object')
   let enabled = myVideoStream.getVideoTracks()[0].enabled;
@@ -96,7 +98,7 @@ const playStop = () => {
     myVideoStream.getVideoTracks()[0].enabled = true;
   }
 }
-
+//This changes the appearance of buttons on being clicked to show usage during that time
 const setMuteButton = () => {
   const html = `
     <i class="fas fa-microphone"></i>
@@ -129,7 +131,7 @@ const setPlayVideo = () => {
   document.querySelector('.main__video_button').innerHTML = html;
 }
 
- // for leave meeting
+ // This is used to leave the meeting and close that particular tab
 
  function close_window() {
   if (confirm("Are You Sure to leave this meeting ?")) {
