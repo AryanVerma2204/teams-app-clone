@@ -16,6 +16,8 @@ THe app because of being fairly primitve, is rather simple to use. On opening th
 
 There is a chat side application too, for sharing of text messages among the clients though presently the app does not distinguish among the users and just displays the input message along with the moniker *user* which makes it confusing.
 
+![Sorry for the error](images/app-ui.png)
+
 # Further Improvements
 There is a definite room for improvements where a number of things have to be rehashed or added. Following is a small list of tasks that could be done to make it much better:
 - The chat side application needs some way of distinguishing users.
