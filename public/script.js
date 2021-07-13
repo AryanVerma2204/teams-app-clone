@@ -1,3 +1,4 @@
+//Creating all the required variables and initializing dependencies on the top
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid')
 const myPeer = new Peer()
