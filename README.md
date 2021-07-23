@@ -12,7 +12,7 @@ Technology requirements:
 - heroku 
 
 # Usage Guide
-THe app because of being fairly primitve, is rather simple to use. On opening the url, the user is redirected to page with a unique id, which can be shared through email or any other medium as per need. There are options for muting, stoppping video share and leaving the meeting which results in that particular tab being closed and the user is removed from the room for everyone else. 
+The app because of being fairly primitve, is rather simple to use. On opening the url, the user is redirected to page with a unique id, which can be shared through email or any other medium as per need. There are options for muting, stoppping video share and leaving the meeting which results in that particular tab being closed and the user is removed from the room for everyone else. 
 
 There is a chat side application too, for sharing of text messages among the clients though presently the app does not distinguish among the users and just displays the input message along with the moniker *user* which makes it confusing.
 
